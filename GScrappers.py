@@ -203,9 +203,14 @@ class GScrappers():
         Final_Results = Final_Results.drop_duplicates(subset='Link').dropna(axis=1, how='all')
         
         # Calculate Relevancy Score
-        Total_Keywords = Final_Results['Keywords Total'].sum()
-        Final_Results['Relevancy Score'] = Final_Results['Keywords Total'] / Total_Keywords
-        
+        try:
+            Final_Results['Keywords Total'] = pd.to_numeric(Final_Results['Keywords Total'], errors='coerce')
+            Total_Keywords = Final_Results['Keywords Total'].sum()
+            Final_Results['Relevancy Score'] = Final_Results['Keywords Total'] / Total_Keywords
+        except:
+            Total_Keywords = 0
+            Final_Results['Relevancy Score'] = 0
+            
         #Rearrange collumns
         if len(Keywords) != 0:
             try:
@@ -223,28 +228,4 @@ class GScrappers():
                 
         return Final_Results
     #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-    
-    
-    #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    # Function 2 : Save Excel
-    #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    def Save_Excel(Dataframe,excel_name='Results'):
-        directory = os.path.expanduser("~/Desktop/")
-        excel_name = re.sub(r'[<>:"/\\|?*]', '', excel_name)
-        
-        writer = pd.ExcelWriter(directory +'{}.xlsx'.format(excel_name),engine="xlsxwriter")
-        Dataframe.to_excel(writer,index=False,sheet_name='Results')
-
-        workbook = writer.book
-        worksheet = writer.sheets['Results']
-
-        worksheet.set_zoom(80)
-        cell_format = workbook.add_format({'text_wrap': True,"align" : "top","valign": "vtop"})
-
-        worksheet.set_column("A:Z",30,cell_format)
-        worksheet.set_default_row(17.5)
-        writer.close()
-    #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
     
