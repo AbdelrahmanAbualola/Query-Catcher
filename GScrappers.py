@@ -219,7 +219,7 @@ class GScrappers():
                 Final_Results = Final_Results[['Headline', 'Paragraphs', 'Most Relevant Paragraphs', 'Keywords Analysis', 'Keywords Total', 'Relevancy Score', 'Link']]
             # Sort by Keywords Total
             Final_Results = Final_Results.sort_values(by='Relevancy Score',ascending=False)
-            Final_Results = Final_Results.reset_index(drop=true)
+            Final_Results = Final_Results.reset_index(drop=True)
         
         else:
             try:
