@@ -56,7 +56,7 @@ if Start_Search:
     Google_URL = GScrappers.Google_Advanced_URL(Search_Query, search_type=Search_Source, exact_words=Included_Keywords, any_of_words='', none_of_words=Discarded_Keywords,
                                                 number_from='', number_to='', site_or_domain='', results_count=Results_Quantity,
                                                 start_date=Start_Date, end_date=End_Date, search_language=Language, country=Country, term_apperaing=Terms_Appearing, file_type='')
-    st.write(f"Search started at: {Google_URL}") 
+    st.write(f"Search started at: [link]{Google_URL}") 
     # Step 2: Get Google Search Results
     Google_Results = GScrappers.Google_Results(Google_URL,Search_Source)
     
