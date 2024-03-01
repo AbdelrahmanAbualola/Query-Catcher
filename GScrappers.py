@@ -19,7 +19,7 @@ class GScrappers():
 
         # Building Main Query
         MAIN_QUERY = f"&as_q={main_query}".replace(" ","+")
-        exact_words = ' OR '.join(['"' + word + '"' for word in exact_words])  if exact_words else ''
+        exact_words = '+OR+'.join(['"' + word + '"' for word in exact_words])  if exact_words else ''
         EXACT_WORDS = f"&as_epq={exact_words}" if exact_words else ''
         ANY_OF_WORDS = f"&as_oq={any_of_words}" if any_of_words else ''
         none_of_words = "+".join(none_of_words) if none_of_words else ''
