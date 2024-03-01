@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_tags import st_tags, st_tags_sidebar
-from time import sleep
 from stqdm import stqdm
 from GScrappers import *
 from Google_Parameters import *
