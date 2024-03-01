@@ -14,7 +14,7 @@ import io
 ###############################################################################################################################################################################################################
 st.title('Welcome to :blue[Query Catcher]')
 st.markdown('This tool has been developed for quick research and website scrapping')
-st.subheader('Start by defining your Search',divider='rainbow')
+st.subheader('Start your Search',divider='rainbow')
 Search_Type = st.radio('Search Type',pd.DataFrame(list({'Simple Search':1,'Advanced Search':2})),horizontal=True)
 Search_Query= st.text_input('Search Query')
 Search_Source = st.radio('Search Source',pd.DataFrame(list(google_params.search_type_basic())),horizontal=True)
@@ -89,6 +89,8 @@ if 'google_results' in Session.keys():
         
         # Merge Scraped Websites with Google Results and Format the findings
         Final_Results = GScrappers.Result_Formating(Session['google_results'],Scraped_Websites_DF,Included_Keywords)
+
+        st.subheader('Search Results',divider='rainbow')
         st.data_editor(Final_Results,column_config={"Link":st.column_config.LinkColumn("Source",display_text='Link')})
         Session['Final_Results'] = Final_Results
         
