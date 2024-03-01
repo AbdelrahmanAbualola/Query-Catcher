@@ -163,7 +163,7 @@ class GScrappers():
             #--------------------------------------------------------------------------------
             # Step 6: Create DF entry
             #--------------------------------------------------------------------------------
-            page = {"Raw Paragrags: body_text,
+            page = {"Raw Paragrags": body_text,
                     "Paragraphs":"\n".join(Paragraphs),
                     "Most Relevant Paragraphs":Most_Relevant_Paragraphs,
                     "Keywords Analysis":"\n".join(Keywords_Analysis),
@@ -174,7 +174,7 @@ class GScrappers():
             
         except Exception as e:
             print(f'Error Faced in Web Content Scrapping: \n{e}')
-            page = {"Raw Paragrags: body_text,
+            page = {"Raw Paragrags": body_text,
                 "Paragraphs":"Site Wasn't Scrapped",
                 "Most Relevant Paragraphs":"Site Wasn't Scrapped",
                 "Keywords Analysis":"Site Wasn't Scrapped",
