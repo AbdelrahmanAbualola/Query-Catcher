@@ -86,7 +86,7 @@ if 'google_results' in Session.keys():
         
         # Create a Dataframe for scrapping results and save in Session   
         Scraped_Websites_DF = pd.DataFrame(Scraped_Websites_List)
-        Session['Articles DF'] = Scraped_Websites_DF
+        Session['Scraped_Websites_DF'] = Scraped_Websites_DF
         
         # Merge Scraped Websites with Google Results and Format the findings
         Final_Results = GScrappers.Result_Formating(Session['google_results'],Scraped_Websites_DF,Included_Keywords)
