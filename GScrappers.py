@@ -110,9 +110,9 @@ class GScrappers():
             response.encoding = response.apparent_encoding
             
             try:
-                soup = BeautifulSoup(response.content,"html5lib")
+                soup = BeautifulSoup(response.content,"html.parser")
             except:
-                soup = BeautifulSoup(response.content,"html5lib",from_encoding="iso-8859-1")
+                soup = BeautifulSoup(response.content,"html.parser",from_encoding="iso-8859-1")
 
             
             #--------------------------------------------------------------------------------
