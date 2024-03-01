@@ -59,7 +59,7 @@ if Start_Search:
     Google_Results = GScrappers.Google_Results(Google_URL,Search_Source)
     
     st.subheader('Search Results',divider='rainbow')
-    st.data_editor(Google_Results,column_config={"Link":st.column_config.LinkColumn("Source",display_text='Link')},width=1280)
+    st.data_editor(Google_Results)
     
     # Step 3: Save results to Session
     st.session_state['google_results'] = Google_Results
