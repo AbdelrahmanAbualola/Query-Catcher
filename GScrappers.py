@@ -19,9 +19,11 @@ class GScrappers():
 
         # Building Main Query
         MAIN_QUERY = f"&as_q={main_query}".replace(" ","+")
-        EXACT_WORDS = f"&as_epq={" OR ".join(['"' + word + '"' for word in exact_words])}" if exact_words else ''
+        exact_words = ' OR '.join(['"' + word + '"' for word in exact_words])  if exact_words else ''
+        EXACT_WORDS = f"&as_epq={exact_words}" if exact_words else ''
         ANY_OF_WORDS = f"&as_oq={any_of_words}" if any_of_words else ''
-        NONE_OF_WORDS = f"&as_eq={"+".join(none_of_words)}" if none_of_words else ''
+        none_of_words = "+".join(none_of_words) if none_of_words else ''
+        NONE_OF_WORDS = f"&as_eq={none_of_words}" if none_of_words else ''
         NUMBER_FROM = f"&as_nlo={number_from}" if number_from else ''
         NUMBER_TO = f"&as_nhi={number_to}" if number_to else ''
         SITE_OR_DOMAIN = f"&as_sitesearch={site_or_domain}" if site_or_domain else ''
