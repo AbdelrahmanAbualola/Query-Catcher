@@ -162,12 +162,7 @@ class GScrappers():
             """
             #--------------------------------------------------------------------------------
             # Step 6: Create DF entry
-            #--------------------------------------------------------------------------------
-            text = []
-            for i in soup.find_all('p'): text.append(i.text)
-            text = "\n".join(text)
             page = {
-                    #"Paragraphs":"\n".join(Paragraphs),
                     "Paragraphs":text,
                     "Most Relevant Paragraphs":Most_Relevant_Paragraphs,
                     "Keywords Analysis":"\n".join(Keywords_Analysis),
