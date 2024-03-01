@@ -1,8 +1,6 @@
 streamlit
 streamlit_tags
 stqdm
-GScrappers
-Google_Parameters
 pandas
 datetime
 xlsxwriter 
