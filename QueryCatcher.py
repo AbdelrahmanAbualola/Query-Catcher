@@ -21,8 +21,8 @@ Search_Source = st.radio('Search Source',pd.DataFrame(list(google_params.search_
 
 if Search_Type == 'Advanced Search': st.divider()
 
-Included_Keywords = st_tags(label='Included Keywords:', text='Press enter to add more', maxtags = 10, key='Included Keywords') if Search_Type == 'Advanced Search' else ""
-Discarded_Keywords= st_tags(label='Discarded Keywords:', text='Press enter to add more', maxtags = 10, key='Discarded Keywords') if Search_Type == 'Advanced Search' else ""
+Included_Keywords = st_tags(label='Included Keywords:', text='Press enter to add more', maxtags = 100, key='Included Keywords') if Search_Type == 'Advanced Search' else ""
+Discarded_Keywords= st_tags(label='Discarded Keywords:', text='Press enter to add more', maxtags = 100, key='Discarded Keywords') if Search_Type == 'Advanced Search' else ""
 
 if Search_Type == 'Advanced Search': st.divider()
 
