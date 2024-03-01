@@ -54,10 +54,11 @@ if Start_Search:
     Google_URL = GScrappers.Google_Advanced_URL(Search_Query, search_type=Search_Source, exact_words=Included_Keywords, any_of_words='', none_of_words=Discarded_Keywords,
                                                 number_from='', number_to='', site_or_domain='', results_count=Results_Quantity,
                                                 start_date=Start_Date, end_date=End_Date, search_language=Language, country=Country, term_apperaing=Terms_Appearing, file_type='')
-    st.write(Google_URL)
+    st.write("Search Started at: "&Google_URL)
     # Step 2: Get Google Search Results
     Google_Results = GScrappers.Google_Results(Google_URL,Search_Source)
     
+    st.subheader('Search Results',divider='rainbow')
     st.data_editor(Google_Results,column_config={"Link":st.column_config.LinkColumn("Source",display_text='Link')},width=1280)
     
     # Step 3: Save results to Session
@@ -90,7 +91,6 @@ if 'google_results' in Session.keys():
         # Merge Scraped Websites with Google Results and Format the findings
         Final_Results = GScrappers.Result_Formating(Session['google_results'],Scraped_Websites_DF,Included_Keywords)
 
-        st.subheader('Search Results',divider='rainbow')
         st.data_editor(Final_Results,column_config={"Link":st.column_config.LinkColumn("Source",display_text='Link')})
         Session['Final_Results'] = Final_Results
         
