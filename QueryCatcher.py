@@ -15,6 +15,8 @@ import io
 st.title('Welcome to :blue[Query Catcher]')
 st.markdown('This tool has been developed for quick research and website scrapping')
 st.subheader('Start your Search',divider='rainbow')
+st.write("check out this [link](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)")
+
 Search_Type = st.radio('Search Type',pd.DataFrame(list({'Simple Search':1,'Advanced Search':2})),horizontal=True)
 Search_Query= st.text_input('Search Query')
 Search_Source = st.radio('Search Source',pd.DataFrame(list(google_params.search_type_basic())),horizontal=True)
