@@ -180,8 +180,9 @@ class GScrappers():
                 "Keywords Analysis":"Site Wasn't Scrapped",
                 "Keywords Total":"Site Wasn't Scrapped",
                 "Link":URL}
+            print(e)
+            pass
             
-            return e
         return page 
     #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
