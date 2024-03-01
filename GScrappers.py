@@ -164,7 +164,8 @@ class GScrappers():
             # Step 6: Create DF entry
             #--------------------------------------------------------------------------------
             page = {
-                    "Paragraphs":"\n".join(Paragraphs),
+                    #"Paragraphs":"\n".join(Paragraphs),
+                    "Paragraphs":body_text,
                     "Most Relevant Paragraphs":Most_Relevant_Paragraphs,
                     "Keywords Analysis":"\n".join(Keywords_Analysis),
                     "Keywords Total":Keywords_Totals,
@@ -199,7 +200,7 @@ class GScrappers():
         Final_Results = pd.merge(Google_Results,Scrapping_Results,on='Link')
         
         # Drop Duplicates and Empty Columns
-        #Final_Results = Final_Results.drop_duplicates(subset='Link').dropna(axis=1, how='all')
+        Final_Results = Final_Results.drop_duplicates(subset='Link').dropna(axis=1, how='all')
         
         # Calculate Relevancy Score
         try:
