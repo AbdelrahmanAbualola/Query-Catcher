@@ -1,7 +1,7 @@
-streamlit
-streamlit_tags
-stqdm
-pandas
+streamlit==1.31.0
+streamlit_tags==1.2.8
+stqdm==0.0.5
+pandas==2.2.1
 datetime
-xlsxwriter 
+XlsxWriter==3.2.0
 io 
