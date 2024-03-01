@@ -122,10 +122,10 @@ class GScrappers():
             body_text = soup.find_all('p')
             
             for entry in body_text:
-                if len(entry.text) > 1:
-                    p = f"({body_text.index(entry)})" + " • " + entry.text.strip().title() + '\n'
-                    if p not in Paragraphs:
-                        Paragraphs.append(p)
+            #    if len(entry.text) > 1:
+                p = f"({body_text.index(entry)})" + " • " + entry.text.strip().title() + '\n'
+                if p not in Paragraphs:
+                    Paragraphs.append(p)
                         
             #--------------------------------------------------------------------------------
             # Step 3: Get Most Relevant Paragraphs
