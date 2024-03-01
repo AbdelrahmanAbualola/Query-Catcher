@@ -45,6 +45,8 @@ Session = st.session_state
 # Section 1: Get Gogogle Results
 st.divider()
 col3,col4,col5,col6 = st.columns(4)
+st.subheader('Search Results',divider='rainbow') if 'google_results' in Session else ""
+
 with col3:
     Start_Search = st.button ('Start Search')
 if Start_Search:
@@ -58,7 +60,6 @@ if Start_Search:
     # Step 2: Get Google Search Results
     Google_Results = GScrappers.Google_Results(Google_URL,Search_Source)
     
-    st.subheader('Search Results',divider='rainbow')
     st.data_editor(Google_Results,column_config={"Link":st.column_config.LinkColumn("Source",display_text='Link')},width=1280)
     
     # Step 3: Save results to Session
