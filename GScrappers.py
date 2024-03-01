@@ -110,9 +110,9 @@ class GScrappers():
             response.encoding = response.apparent_encoding
             
             try:
-                soup = BeautifulSoup(response.content,"html.parser")
+                soup = BeautifulSoup(response.content,"html5lib")
             except:
-                soup = BeautifulSoup(response.content,"html.parser",from_encoding="iso-8859-1")
+                soup = BeautifulSoup(response.content,"html5lib",from_encoding="iso-8859-1")
 
             
             #--------------------------------------------------------------------------------
@@ -163,7 +163,7 @@ class GScrappers():
             #--------------------------------------------------------------------------------
             # Step 6: Create DF entry
             #--------------------------------------------------------------------------------
-            page = {
+            page = {"Raw Paragraphs:body_text,
                     "Paragraphs":"\n".join(Paragraphs),
                     "Most Relevant Paragraphs":Most_Relevant_Paragraphs,
                     "Keywords Analysis":"\n".join(Keywords_Analysis),
