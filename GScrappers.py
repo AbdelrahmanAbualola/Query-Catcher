@@ -164,7 +164,7 @@ class GScrappers():
             #--------------------------------------------------------------------------------
             # Step 6: Create DF entry
             page = {
-                    "Paragraphs":text,
+                    "Paragraphs":"\n".join(Paragraphs),
                     "Most Relevant Paragraphs":Most_Relevant_Paragraphs,
                     "Keywords Analysis":"\n".join(Keywords_Analysis),
                     "Keywords Total":Keywords_Totals,
