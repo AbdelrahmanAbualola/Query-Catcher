@@ -24,6 +24,7 @@ if Search_Type == 'Advanced Search': st.divider()
 
 Included_Keywords = st_tags(label='Included Keywords:', text='Press enter to add more', maxtags = 100, key='Included Keywords') if Search_Type == 'Advanced Search' else ""
 Discarded_Keywords= st_tags(label='Discarded Keywords:', text='Press enter to add more', maxtags = 100, key='Discarded Keywords') if Search_Type == 'Advanced Search' else ""
+Websites= st_tags(label='Websites:', text='Press enter to add more', maxtags = 100, key='Websites') if Search_Type == 'Advanced Search' else ""
 
 if Search_Type == 'Advanced Search': st.divider()
 
