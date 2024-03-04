@@ -55,7 +55,7 @@ if Start_Search:
     Start_Date = Date_Range[0].strftime("%m-%d-%Y") if Search_Type == 'Advanced Search' else ""
     End_Date = Date_Range[1].strftime("%m-%d-%Y")  if Search_Type == 'Advanced Search' else ""
     Google_URL = GScrappers.Google_Advanced_URL(Search_Query, search_type=Search_Source, exact_words=Included_Keywords, any_of_words='', none_of_words=Discarded_Keywords,
-                                                number_from='', number_to='', site_or_domain='', results_count=Results_Quantity,
+                                                number_from='', number_to='', site_or_domain=Websites, results_count=Results_Quantity,
                                                 start_date=Start_Date, end_date=End_Date, search_language=Language, country=Country, term_apperaing=Terms_Appearing, file_type='')
     st.write(f"Search started at: [Link]({Google_URL.replace(' ','+')})") 
     # Step 2: Get Google Search Results
