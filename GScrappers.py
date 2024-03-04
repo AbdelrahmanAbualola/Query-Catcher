@@ -26,7 +26,7 @@ class GScrappers():
         NONE_OF_WORDS = f"&as_eq={none_of_words}" if none_of_words else ''
         NUMBER_FROM = f"&as_nlo={number_from}" if number_from else ''
         NUMBER_TO = f"&as_nhi={number_to}" if number_to else ''
-        SITE_OR_DOMAIN = '+OR+'.join(site_or_domain)  if site_or_domain else ''
+        SITE_OR_DOMAIN = '+OR+'.join(['site:' + site for site in site_or_domain])  if site_or_domain else ''
         #SITE_OR_DOMAIN = f"&as_sitesearch={site_or_domain}" if site_or_domain else ''
         RESULTS_COUNTS = f"&num={int(results_count)}" if results_count else ''
         DATE = f"&tbs=cdr:1,cd_min:{start_date},cd_max:{end_date}" if start_date or end_date else ''
